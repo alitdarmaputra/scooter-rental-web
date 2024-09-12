@@ -25,7 +25,9 @@ export default function Navbar() {
 				zIndex={2}
 			>
 				<Flex justifyContent='space-between' alignItems='center'>
-					<Box>Logo</Box>
+					<Link href='/#home' _hover={{ textDecor: "none" }}>
+						Logo
+					</Link>
 					<Box display={["none", "flex"]} gap={10}>
 						<Link
 							py={2}

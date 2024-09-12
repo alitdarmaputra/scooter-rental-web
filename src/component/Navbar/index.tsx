@@ -4,9 +4,9 @@ import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/next-js";
 import {
 	Box,
-	Collapse,
 	Flex,
 	IconButton,
+	SlideFade,
 	useDisclosure,
 } from "@chakra-ui/react";
 
@@ -22,21 +22,29 @@ export default function Navbar() {
 				shadow='md'
 				position='fixed'
 				width='100vw'
-				zIndex={1}
+				zIndex={2}
 			>
 				<Flex justifyContent='space-between' alignItems='center'>
 					<Box>Logo</Box>
 					<Box display={["none", "flex"]} gap={10}>
-						<Link py={2} href='/test' _hover={{ textDecor: "underline" }}>
+						<Link
+							py={2}
+							href='/#scooter-list'
+							_hover={{ textDecor: "underline" }}
+						>
 							Scooter List
 						</Link>
-						<Link py={2} href='/test' _hover={{ textDecor: "underline" }}>
+						<Link
+							py={2}
+							href='/#how-to-rent'
+							_hover={{ textDecor: "underline" }}
+						>
 							How to Rent
 						</Link>
-						<Link py={2} href='/test' _hover={{ textDecor: "underline" }}>
+						<Link py={2} href='/#about-us' _hover={{ textDecor: "underline" }}>
 							About Us
 						</Link>
-						<Link py={2} href='/test' _hover={{ textDecor: "underline" }}>
+						<Link py={2} href='/#FAQ' _hover={{ textDecor: "underline" }}>
 							FAQ
 						</Link>
 					</Box>
@@ -49,8 +57,14 @@ export default function Navbar() {
 					/>
 				</Flex>
 			</Box>
-			<Box position='fixed' mt={20} w='100vw' zIndex={1}>
-				<Collapse in={isOpen} animateOpacity>
+			<Box
+				position='fixed'
+				mt={20}
+				w='100vw'
+				zIndex={2}
+				display={isOpen ? "block" : "none"}
+			>
+				<SlideFade in={isOpen}>
 					<Box p={5} shadow='md' bg='white'>
 						<Flex flexDir='column' gap={5}>
 							<Link py={2} href='/test' _hover={{ textDecor: "underline" }}>
@@ -67,7 +81,7 @@ export default function Navbar() {
 							</Link>
 						</Flex>
 					</Box>
-				</Collapse>
+				</SlideFade>
 			</Box>
 		</>
 	);

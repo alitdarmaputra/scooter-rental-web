@@ -122,28 +122,21 @@ const questions: Array<Question> = [
 export default function Page() {
 	return (
 		<Box overflowX='hidden'>
-			<Flex
-				height='100vh'
-				bg='teal'
-				alignItems='center'
-				justifyContent='center'
+			<Image
 				zIndex={-2}
 				position='fixed'
-			>
-				<Image
-					src={hero}
-					alt='tourist riding scooter'
-					minH='100%'
-					objectFit='cover'
-					objectPosition={{ base: "-600px 0", md: "0 0" }}
-				/>
-			</Flex>
+				minH='100vh'
+				src={hero}
+				alt='tourist riding scooter'
+				objectPosition='center'
+				objectFit='cover'
+			/>
 			<section id='home'>
 				<Box
 					pt={250}
 					ml={[0, 40]}
 					px={[10, 0]}
-					height='100vh'
+					height='80vh'
 					color='white'
 					maxW={["100%", "40%"]}
 					textAlign={["center", "left"]}
@@ -183,8 +176,15 @@ export default function Page() {
 					</motion.div>
 				</Box>
 			</section>
+			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+				<path
+					fill='#fff'
+					fill-opacity='1'
+					d='M0,64L34.3,80C68.6,96,137,128,206,138.7C274.3,149,343,139,411,112C480,85,549,43,617,48C685.7,53,754,107,823,133.3C891.4,160,960,160,1029,176C1097.1,192,1166,224,1234,202.7C1302.9,181,1371,107,1406,69.3L1440,32L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z'
+				></path>
+			</svg>
 			<section id='scooter-list'>
-				<Box bg='white' px={8} pt={32} textAlign='center'>
+				<Box bg='white' px={8} textAlign='center'>
 					<Heading as='h2' mb={10}>
 						Scooter List
 					</Heading>

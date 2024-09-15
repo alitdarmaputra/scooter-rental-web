@@ -6,7 +6,6 @@ import {
 	Card,
 	CardBody,
 	CardFooter,
-	Flex,
 	Heading,
 	Stack,
 	Text,

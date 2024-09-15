@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "question": "What do I need to rent a scooter?",
+    "answer": "You will need a valid driver’s license or ID, a credit or debit card for payment, and a smartphone with our app installed. Some locations may require you to be at least 18 years old to rent a scooter."
+  },
+  {
+    "id": 2,
+    "question": "How much does it cost to rent a scooter?",
+    "answer": "Our rental rates vary based on location and duration. Typically, we charge a small unlocking fee and a per-minute or per-hour rate. Check the app or website for specific pricing in your area."
+  },
+  {
+    "id": 3,
+    "question": "What is included in the rental price?",
+    "answer": "The rental price includes the use of the scooter and access to our customer support. Helmets are provided where required by local regulations. Please check if your location offers helmets and other accessories."
+  },
+  {
+    "id": 4,
+    "question": "Can I use the scooter outside of the designated area?",
+    "answer": "Scooters must be used within the designated operating area. Using them outside this zone may incur additional charges or fines. Make sure to check the app for the boundaries of the service area."
+  },
+  {
+    "id": 5,
+    "question": "What should I do if the scooter is damaged or not working properly?",
+    "answer": "If you encounter any issues with the scooter, please report them immediately. Do not attempt to fix the scooter yourself."
+  },
+  {
+    "id": 6,
+    "question": "How do I return the scooter?",
+    "answer": "To return the scooter, park it in a designated parking area or a location approved by our service guidelines. Ensure the scooter is properly parked and locked."
+  },
+  {
+    "id": 7,
+    "question": "What happens if I am late returning the scooter?",
+    "answer": "Late returns may incur additional charges based on our late fee policy. If you anticipate being late, please contact us as soon as possible to discuss potential options."
+  },
+  {
+    "id": 8,
+    "question": "Can I extend my rental period?",
+    "answer": "Yes, you can extend your rental period. Extensions will be charged according to our standard rates."
+  },
+  {
+    "id": 9,
+    "question": "Are there any safety tips for using the scooter?",
+    "answer": "Always wear a helmet if provided, follow local traffic laws, and be aware of your surroundings. Avoid using the scooter on sidewalks or in prohibited areas. If you’re new to riding scooters, take some time to practice in a safe area."
+  }
+]

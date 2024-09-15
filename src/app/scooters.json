@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Honda Vario 125 CC",
+    "description": "Honda Vario 125 2022 is an automatic scooter with a 4-speed 124.8cc SOHC engine with cooling and has a torque of 5000 rpm.",
+    "img": [
+      "/img/scooters/honda-vario-125-cc/honda-vario-125-cc-1.jpg",
+      "/img/scooters/honda-vario-125-cc/honda-vario-125-cc-2.jpg",
+      "/img/scooters/honda-vario-125-cc/honda-vario-125-cc-3.jpg"
+    ],
+    "pricePerDay": 100,
+    "specialPrice": {
+      "pricePerDay": 80,
+      "condition": "More than 1 day"
+    },
+    "bookLink": "https://wa.me/6283114301410"
+  },
+  {
+    "id": 2,
+    "name": "Honda Scoopy 110 CC",
+    "description": "The Honda Scoopy 110 CC is a retro-styled automatic scooter with a 110 cc SOHC engine. It features automatic transmission and offers comfort for daily commuting.",
+    "img": [
+      "/img/scooters/honda-scoopy-110-cc/honda-scoopy-110-cc-1.jpeg",
+      "/img/scooters/honda-scoopy-110-cc/honda-scoopy-110-cc-2.jpeg"
+    ],
+    "pricePerDay": 100,
+    "specialPrice": {
+      "pricePerDay": 80,
+      "condition": "More than 1 day"
+    },
+    "bookLink": "https://wa.me/6283114301410"
+  },
+  {
+    "id": 3,
+    "name": "Yamaha Gear 125 CC",
+    "description": "The Yamaha Gear 125 CC is a modern automatic scooter with a 125 cc engine and CVT transmission. It features a stylish design and advanced features for a comfortable ride.",
+    "img": ["/img/scooters/yamaha-gear-125-cc/yamaha-gear-125-cc-1.jpg"],
+    "pricePerDay": 100,
+    "specialPrice": {
+      "pricePerDay": 80,
+      "condition": "More than 1 day"
+    },
+    "bookLink": "https://wa.me/6283114301410"
+  },
+  {
+    "id": 4,
+    "name": "Honda Vario 150 CC",
+    "description": "The Honda Vario 150 CC offers a 150 cc SOHC engine with eSP technology. This scooter is equipped with premium features and a modern design.",
+    "img": ["/img/scooters/honda-vario-150-cc/honda-vario-150-cc-1.jpg"],
+    "pricePerDay": 90,
+    "bookLink": "https://wa.me/6283114301410"
+  },
+  {
+    "id": 5,
+    "name": "New Nmax 155 CC",
+    "description": "The New Nmax 155 CC is a premium automatic scooter with a 155 cc engine equipped with VVA and ABS technology. It delivers high performance and modern features for a comfortable ride.",
+    "img": [
+      "/img/scooters/new-nmax-155-cc/new-nmax-155-cc-1.png",
+      "/img/scooters/new-nmax-155-cc/new-nmax-155-cc-2.png"
+    ],
+    "pricePerDay": 150,
+    "bookLink": "https://wa.me/6283114301410"
+  },
+  {
+    "id": 6,
+    "name": "Old Nmax 155 CC",
+    "description": "The Old Nmax 155 CC is the previous model of the Nmax scooter, featuring a 155 cc engine with VVA technology. Although it's an older model, it still offers reliable performance and an attractive design.",
+    "img": ["/img/scooters/old-nmax-155-cc/old-nmax-155-cc-1.jpeg"],
+    "pricePerDay": 130,
+    "bookLink": "https://wa.me/6283114301410"
+  }
+]

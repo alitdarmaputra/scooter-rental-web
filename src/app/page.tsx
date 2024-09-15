@@ -16,7 +16,7 @@ import {
 import { motion } from "framer-motion";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Scooter } from "../component/ScooterCatalogue/ScooterCard";
-import ScooterCatalogue from "@/component/ScooterCatalogue";
+import ScooterCatalogue from "../component/ScooterCatalogue";
 import { MdScreenSearchDesktop } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -25,99 +25,14 @@ import { GiScooter } from "react-icons/gi";
 import { FaMoneyBill, FaRegMoneyBillAlt, FaWhatsapp } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosSettings } from "react-icons/io";
-import Collapse from "@/component/Collapse";
+import Collapse from "../component/Collapse";
 import { Question } from "../component/Collapse/Collapse";
+import jsonScooters from "./scooters.json";
+import jsonQuestions from "./questions.json";
 
-const scooters: Array<Scooter> = [
-	{
-		id: 1,
-		title: "Nmax",
-		imgLink: "/img/scooters/nmax/nmax.png",
-		alt: "nmax",
-		bookLink: "https://google.com",
-	},
-	{
-		id: 2,
-		title: "Nmax",
-		imgLink: "/img/scooters/nmax/nmax.png",
-		alt: "nmax",
-		bookLink: "https://google.com",
-	},
-	{
-		id: 3,
-		title: "Nmax",
-		imgLink: "/img/scooters/nmax/nmax.png",
-		alt: "nmax",
-		bookLink: "https://google.com",
-	},
-	{
-		id: 4,
-		title: "Nmax",
-		imgLink: "/img/scooters/nmax/nmax.png",
-		alt: "nmax",
-		bookLink: "https://google.com",
-	},
-];
+const scooters: Array<Scooter> = jsonScooters;
 
-const questions: Array<Question> = [
-	{
-		id: 1,
-		question: "What do I need to rent a scooter? ",
-		answer:
-			"You will need a valid driver’s license or ID, a credit or debit card for payment, and a smartphone with our app installed. Some locations may require you to be at least 18 years old to rent a scooter.",
-	},
-
-	{
-		id: 2,
-		question: "How much does it cost to rent a scooter?",
-		answer:
-			"Our rental rates vary based on location and duration. Typically, we charge a small unlocking fee and a per-minute or per-hour rate. Check the app or website for specific pricing in your area.",
-	},
-
-	{
-		id: 3,
-		question: "What is included in the rental price?",
-		answer:
-			"The rental price includes the use of the scooter and access to our customer support. Helmets are provided where required by local regulations. Please check if your location offers helmets and other accessories.",
-	},
-	{
-		id: 4,
-		question: "Can I use the scooter outside of the designated area?",
-		answer:
-			"Scooters must be used within the designated operating area. Using them outside this zone may incur additional charges or fines. Make sure to check the app for the boundaries of the service area.",
-	},
-	{
-		id: 5,
-		question:
-			"What should I do if the scooter is damaged or not working properly?",
-		answer:
-			"If you encounter any issues with the scooter, please report them immediately. Do not attempt to fix the scooter yourself.",
-	},
-	{
-		id: 6,
-		question: "How do I return the scooter?",
-		answer:
-			"To return the scooter, park it in a designated parking area or a location approved by our service guidelines. Ensure the scooter is properly parked and locked.",
-	},
-	{
-		id: 7,
-		question: "What happens if I am late returning the scooter?",
-		answer:
-			"Late returns may incur additional charges based on our late fee policy. If you anticipate being late, please contact us as soon as possible to discuss potential options.",
-	},
-	{
-		id: 8,
-		question: "Can I extend my rental period?",
-		answer:
-			"Yes, you can extend your rental period. Extensions will be charged according to our standard rates.",
-	},
-	{
-		id: 9,
-		question: "Are there any safety tips for using the scooter?",
-		answer:
-			"Always wear a helmet if provided, follow local traffic laws, and be aware of your surroundings. Avoid using the scooter on sidewalks or in prohibited areas. If you’re new to riding scooters, take some time to practice in a safe area.",
-	},
-];
+const questions: Array<Question> = jsonQuestions;
 
 export default function Page() {
 	return (
@@ -161,25 +76,29 @@ export default function Page() {
 							own pace and uncover its true magic.
 						</Text>
 						<ButtonGroup mt={8}>
-							<Button>Book Now</Button>
-							<Button
-								rightIcon={<ArrowForwardIcon />}
-								bg='transparent'
-								border='1px'
-								color='white'
-								borderColor='white'
-								_hover={{ color: "black", bg: "white" }}
-							>
-								Chat Us
-							</Button>
+							<Link href='/#scooter-list'>
+								<Button>Book Now</Button>
+							</Link>
+							<Link href='https://wa.me/6283114301410'>
+								<Button
+									rightIcon={<ArrowForwardIcon />}
+									bg='transparent'
+									border='1px'
+									color='white'
+									borderColor='white'
+									_hover={{ color: "black", bg: "white" }}
+								>
+									Chat Us
+								</Button>
+							</Link>
 						</ButtonGroup>
 					</motion.div>
 				</Box>
 			</section>
-			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
+			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 319'>
 				<path
 					fill='#fff'
-					fill-opacity='1'
+					fillOpacity='1'
 					d='M0,64L34.3,80C68.6,96,137,128,206,138.7C274.3,149,343,139,411,112C480,85,549,43,617,48C685.7,53,754,107,823,133.3C891.4,160,960,160,1029,176C1097.1,192,1166,224,1234,202.7C1302.9,181,1371,107,1406,69.3L1440,32L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z'
 				></path>
 			</svg>

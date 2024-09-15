@@ -1,24 +1,38 @@
 import {
+	Box,
 	Button,
 	Card,
 	CardBody,
 	CardFooter,
 	Heading,
 	Stack,
+	Text,
 } from "@chakra-ui/react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Link } from "@chakra-ui/next-js";
 
 export type Scooter = {
 	id: number;
-	imgLink: string;
-	title: string;
-	alt: string;
+	name: string;
+	description: string;
+	img: Array<string>;
 	bookLink: string;
+	pricePerDay: number;
+	specialPrice?: {
+		pricePerDay: number;
+		condition: string;
+	};
 };
 
 export default function ScooterCard({ scooter }: { scooter: Scooter }) {
+	const sourceLink = new URL(`/scooter/${scooter.id}`, window.location.origin);
+
+	const bookLink: URL = new URL(scooter.bookLink);
+	bookLink.searchParams.set(
+		"text",
+		`Hello Cahaya Dewi's Rental, I would like to rent ${scooter.name} (${sourceLink}).`
+	);
+
 	return (
 		<motion.div
 			initial={{ y: 20, opacity: 0 }}
@@ -28,21 +42,38 @@ export default function ScooterCard({ scooter }: { scooter: Scooter }) {
 		>
 			<Card maxW='sm' bg='transparent' shadow='none'>
 				<CardBody>
-					<Image
-						src={scooter.imgLink}
-						width={560}
-						height={492}
-						alt={scooter.alt}
-					/>
-					<Stack mt='6' spacing='3'>
-						<Heading size='md'>{scooter.title}</Heading>
+					<Box
+						bgImg={scooter.img[0]}
+						height={350}
+						width={350}
+						bgSize='cover'
+						bgPos='center'
+					></Box>
+					<Stack mt='6' spacing='2'>
+						<Heading size='md'>{scooter.name}</Heading>
+						<Text fontWeight='bold'>Price</Text>
+						<Text fontSize={scooter.specialPrice ? "md" : "3xl"}>
+							{scooter.pricePerDay}K/ Day
+						</Text>
+						{scooter.specialPrice && (
+							<>
+								<Text fontWeight='bold' color='teal'>
+									{scooter.specialPrice.condition}
+								</Text>
+								<Text fontSize='3xl'>
+									{scooter.specialPrice.pricePerDay}K/ Day
+								</Text>
+							</>
+						)}
 					</Stack>
 				</CardBody>
 				<CardFooter>
 					<Stack w='100%'>
-						<Button width='100%' colorScheme='teal'>
-							Book Now
-						</Button>
+						<Link href={bookLink}>
+							<Button width='100%' colorScheme='teal'>
+								Book Now
+							</Button>
+						</Link>
 						<Link href={`/scooter/${scooter.id}`}>
 							<Button width='100%' colorScheme='teal' variant='outline'>
 								Detail

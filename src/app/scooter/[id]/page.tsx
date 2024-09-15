@@ -59,8 +59,8 @@ export default function ScooterDetail({ params }: { params: { id: number } }) {
 
 	return (
 		<Box overflowX='hidden' pt={100} pb={50} px={8} bg={"gray.50"}>
-			<Link href='/'>
-				<Flex gap={4} alignItems='center'>
+			<Link href='/' display='inline-block'>
+				<Flex gap={4} w='fit-content' alignItems='center'>
 					<FaArrowLeft />
 					Back to Home
 				</Flex>

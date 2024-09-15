@@ -1,3 +1,5 @@
+"use client";
+
 import {
 	Box,
 	Button,
@@ -10,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { Link } from "@chakra-ui/next-js";
+import { useEffect, useState } from "react";
 
 export type Scooter = {
 	id: number;
@@ -25,13 +28,21 @@ export type Scooter = {
 };
 
 export default function ScooterCard({ scooter }: { scooter: Scooter }) {
-	const sourceLink = new URL(`/scooter/${scooter.id}`, window.location.origin);
+	const [bookLink, setBookLink] = useState("");
 
-	const bookLink: URL = new URL(scooter.bookLink);
-	bookLink.searchParams.set(
-		"text",
-		`Hello Cahaya Dewi's Rental, I would like to rent ${scooter.name} (${sourceLink}).`
-	);
+	useEffect(() => {
+		const link: URL = new URL(scooter.bookLink);
+		const sourceLink = new URL(
+			`/scooter/${scooter.id}`,
+			window.location.origin
+		);
+
+		link.searchParams.set(
+			"text",
+			`Hello Cahaya Dewi's Rental, I would like to rent ${scooter.name} (${sourceLink}).`
+		);
+		setBookLink(link.toString());
+	}, [scooter]);
 
 	return (
 		<motion.div

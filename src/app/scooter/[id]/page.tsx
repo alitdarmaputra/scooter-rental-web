@@ -23,28 +23,39 @@ import { Link } from "@chakra-ui/next-js";
 
 import jsonScooters from "../../scooters.json";
 import { Scooter } from "../../../component/ScooterCatalogue/ScooterCard";
+import { useEffect, useState } from "react";
+import ScooterCatalogue from "@/component/ScooterCatalogue";
 
-const scooterDetails: Array<Scooter> = jsonScooters;
+const scooters: Array<Scooter> = jsonScooters;
 
 export default function ScooterDetail({ params }: { params: { id: number } }) {
-	const scooterDetail: Array<Scooter> = scooterDetails.filter(
+	const [bookLink, setBookLink] = useState("");
+
+	const scooterFiltered: Array<Scooter> = scooters.filter(
 		s => s.id == params.id
 	);
 
-	if (!scooterDetail.length) {
+	useEffect(() => {
+		if (!scooterFiltered.length) {
+			return;
+		}
+
+		const link: URL = new URL(scooterFiltered[0].bookLink);
+		const sourceLink = new URL(
+			`/scooter/${scooterFiltered[0].id}`,
+			window.location.origin
+		);
+
+		link.searchParams.set(
+			"text",
+			`Hello Cahaya Dewi's Rental, I would like to rent ${scooterFiltered[0].name} (${sourceLink}).`
+		);
+		setBookLink(link.toString());
+	}, [scooterFiltered]);
+
+	if (!scooterFiltered.length) {
 		return <Heading>Scooter not found</Heading>;
 	}
-
-	const sourceLink = new URL(
-		`/scooter/${scooterDetail[0].id}`,
-		window.location.origin
-	);
-
-	const bookLink: URL = new URL(scooterDetail[0].bookLink);
-	bookLink.searchParams.set(
-		"text",
-		`Hello Cahaya Dewi's Rental, I would like to rent ${scooterDetail[0].name} (${sourceLink}).`
-	);
 
 	return (
 		<Box overflowX='hidden' pt={100} pb={50} px={8} bg={"gray.50"}>
@@ -55,7 +66,7 @@ export default function ScooterDetail({ params }: { params: { id: number } }) {
 				</Flex>
 			</Link>
 			<Heading my={4} as='h3'>
-				{scooterDetail[0].name}
+				{scooterFiltered[0].name}
 			</Heading>
 			<Flex justifyContent='start' gap={8} mt={8} flexDir={["column", "row"]}>
 				<Card flexGrow={1}>
@@ -66,7 +77,7 @@ export default function ScooterDetail({ params }: { params: { id: number } }) {
 							className='mySwiper'
 							style={{ maxWidth: "600px" }}
 						>
-							{scooterDetail[0].img.map((src: string, i: number) => {
+							{scooterFiltered[0].img.map((src: string, i: number) => {
 								return (
 									<SwiperSlide key={i}>
 										<Flex w='100%' justifyContent='center'>
@@ -89,24 +100,26 @@ export default function ScooterDetail({ params }: { params: { id: number } }) {
 						<Heading as='h3' fontSize='3xl' fontWeight='bold' mb={4}>
 							Description:
 						</Heading>
-						<Text mb={4}>{scooterDetail[0].description}</Text>
+						<Text mb={4}>{scooterFiltered[0].description}</Text>
 						<Box mb={6}>
 							<Heading as='h3' mb={4} fontSize='xl' fontWeight='bold'>
 								Price:
 							</Heading>
 							<Flex
 								justifyContent='space-between'
-								fontSize={scooterDetail[0].specialPrice ? "md" : "3xl"}
+								fontSize={scooterFiltered[0].specialPrice ? "md" : "3xl"}
 							>
-								{scooterDetail[0].specialPrice && <Text>Normal</Text>}
-								<Text>{scooterDetail[0].pricePerDay}K /Day</Text>
+								{scooterFiltered[0].specialPrice && <Text>Normal</Text>}
+								<Text>{scooterFiltered[0].pricePerDay}K /Day</Text>
 							</Flex>
-							{scooterDetail[0].specialPrice && (
+							{scooterFiltered[0].specialPrice && (
 								<Flex justifyContent='space-between' fontSize='xl'>
 									<Text color='teal' fontWeight='bold'>
-										{scooterDetail[0].specialPrice.condition}
+										{scooterFiltered[0].specialPrice.condition}
 									</Text>
-									<Text>{scooterDetail[0].specialPrice.pricePerDay}K /Day</Text>
+									<Text>
+										{scooterFiltered[0].specialPrice.pricePerDay}K /Day
+									</Text>
 								</Flex>
 							)}
 						</Box>
@@ -119,6 +132,12 @@ export default function ScooterDetail({ params }: { params: { id: number } }) {
 					</CardBody>
 				</Card>
 			</Flex>
+			<Heading my={10} as='h3'>
+				Other Scooters
+			</Heading>
+			<Card>
+				<ScooterCatalogue scooters={scooters} />
+			</Card>
 		</Box>
 	);
 }

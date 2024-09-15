@@ -1,14 +1,16 @@
 "use client";
 
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { Link } from "@chakra-ui/next-js";
+import { Image, Link } from "@chakra-ui/next-js";
 import {
 	Box,
 	Flex,
 	IconButton,
 	SlideFade,
+	Text,
 	useDisclosure,
 } from "@chakra-ui/react";
+import Logo from "../../asset/logo.png";
 
 export default function Navbar() {
 	const { isOpen, onToggle } = useDisclosure();
@@ -26,7 +28,12 @@ export default function Navbar() {
 			>
 				<Flex justifyContent='space-between' alignItems='center'>
 					<Link href='/#home' _hover={{ textDecor: "none" }}>
-						Logo
+						<Flex gap={2} alignItems='center'>
+							<Image alt='logo' src={Logo} width={10} height={10} />
+							<Text fontWeight='bold' fontSize='xl'>
+								Cahaya Dewi&apos;s Rental
+							</Text>
+						</Flex>
 					</Link>
 					<Box display={["none", "flex"]} gap={10}>
 						<Link

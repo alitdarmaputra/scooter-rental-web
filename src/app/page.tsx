@@ -321,7 +321,7 @@ export default function Page() {
 					<Flex gap={10} flexDir={["column", "row"]}>
 						<Box maxW='lg' textAlign={["center", "left"]}>
 							<Heading as='h3' mb={5}>
-								Bali Scooter Rental
+								Cahaya Dewi&apos;s Rental
 							</Heading>
 							<Text color='gray.200' mb={10}>
 								Based in the heart of Bali, we pride ourselves on offering
@@ -331,15 +331,26 @@ export default function Page() {
 								a short vacation or an extended stay, we have the perfect
 								scooter to enhance your adventure.
 							</Text>
-							<Text>Email: test@gmail.com</Text>
-							<Text>Whatsapp: test@gmail.com</Text>
+							{/*<Text>Email: test@gmail.com</Text>*/}
+							<Text fontWeight='bold' mb={2}>
+								Whatsapp:
+							</Text>
+							<Box mb={6}>
+								<Link href='https://wa.me/6283114301410'>
+									+6283114301410 (Dewi)
+								</Link>
+								<br />
+								<Link href='https://wa.me/6281338978323'>
+									+6281338978323 (Edo)
+								</Link>
+							</Box>
+							<Text fontWeight='bold'>Location: </Text>
 							<Text>
-								Location: Jl. Saliya No.30, Sangeh, Kec. Abiansemal, Kabupaten
-								Badung, Bali 80352
+								Bidadari Street no. 68 Seminyak, Badung Bali – Indonesia
 							</Text>
 						</Box>
 						<iframe
-							src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.33695908929!2d115.20533117490643!3d-8.466576585608697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd22372aa34cfe1%3A0x10abfdd4e71b3f69!2sBabi%20Genyol%20Pan%20Aplus!5e0!3m2!1sid!2sid!4v1726074528661!5m2!1sid!2sid'
+							src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.0923152156806!2d115.16427947822474!3d-8.682771066130497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2473cc413ca71%3A0xdbc5ceda977ba509!2sJl.%20Bidadari%20No.68%2C%20Seminyak%2C%20Kec.%20Kuta%2C%20Kabupaten%20Badung%2C%20Bali%2080361!5e0!3m2!1sid!2sid!4v1726389457853!5m2!1sid!2sid'
 							style={{ border: 0, width: "100%", height: "500px" }}
 							loading='lazy'
 						></iframe>
@@ -354,7 +365,7 @@ export default function Page() {
 					</Heading>
 					<Flex
 						justifyContent='space-between'
-						alignItems='center'
+						alignItems='stretch'
 						gap={20}
 						px={[8, 20]}
 						flexDir={["column", "row"]}
@@ -379,8 +390,8 @@ export default function Page() {
 										Convenient Locations
 									</Heading>
 									<Text>
-										With multiple pickup and drop-off points across the city,
-										accessing your scooter is a breeze.
+										You can return your scooter to any location that works best
+										for you.
 									</Text>
 								</Stack>
 							</CardBody>
@@ -457,7 +468,8 @@ export default function Page() {
 							Everything you need to know about the product and how it work.
 							Can&apos;t find an answer?
 							{
-								<Link color='teal' href='https://google.com'>
+								<Link color='teal' href='https://wa.me/6283114301410'>
+									{" "}
 									Please chat to our contact.
 								</Link>
 							}

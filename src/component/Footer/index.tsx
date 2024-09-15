@@ -1,6 +1,4 @@
-import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
+import { Box, Flex, Text } from "@chakra-ui/react";
 
 export default function Footer() {
 	return (
@@ -8,12 +6,15 @@ export default function Footer() {
 			<Flex
 				maxW='4xl'
 				marginInline='auto'
-				justifyContent='space-between'
+				justifyContent='center'
 				alignItems='center'
 				flexDir={["column", "row"]}
 				gap={5}
 			>
-				<Text>© 2019 company, Inc. All rights reserved.</Text>
+				<Text>
+					© 2024 Cahaya Dewi&apos;s Rental, Inc. All rights reserved.
+				</Text>
+				{/*
 				<Flex gap={5}>
 					<IconButton
 						aria-label='send whatsapp'
@@ -31,6 +32,7 @@ export default function Footer() {
 						colorScheme='blue'
 					/>
 				</Flex>
+				*/}
 			</Flex>
 		</Box>
 	);

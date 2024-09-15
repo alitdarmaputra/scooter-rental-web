@@ -6,6 +6,7 @@ import {
 	Card,
 	CardBody,
 	CardFooter,
+	Flex,
 	Heading,
 	Stack,
 	Text,
@@ -80,6 +81,17 @@ export default function ScooterCard({ scooter }: { scooter: Scooter }) {
 				</CardBody>
 				<CardFooter>
 					<Stack w='100%'>
+						<Text
+							py={2}
+							px={3}
+							bg='yellow.200'
+							fontSize='sm'
+							fontWeight='bold'
+							color='red.800'
+							rounded='md'
+						>
+							Minimum 2 Days Rent
+						</Text>
 						<Link href={bookLink}>
 							<Button width='100%' colorScheme='teal'>
 								Book Now

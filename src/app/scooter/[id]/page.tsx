@@ -124,6 +124,19 @@ export default function ScooterDetail({ params }: { params: { id: number } }) {
 							)}
 						</Box>
 						<Divider mb={4} />
+						<Text
+							py={2}
+							px={3}
+							mb={2}
+							bg='yellow.200'
+							fontSize='sm'
+							fontWeight='bold'
+							color='red.800'
+							rounded='md'
+							textAlign='center'
+						>
+							Minimum 2 Days Rent
+						</Text>
 						<Link href={bookLink}>
 							<Button w='100%' colorScheme='teal'>
 								Book Now
@@ -135,7 +148,7 @@ export default function ScooterDetail({ params }: { params: { id: number } }) {
 			<Heading my={10} as='h3'>
 				Other Scooters
 			</Heading>
-			<Card>
+			<Card textAlign='center'>
 				<ScooterCatalogue scooters={scooters} />
 			</Card>
 		</Box>
